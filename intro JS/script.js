@@ -17,22 +17,20 @@ console.log(`O usuário mora em ${adress.city} / ${adress.uf}, no bairro ${adres
 
 
 
-/************************** EXERCÍCIO 2 *********************************
+//************************** EXERCÍCIO 2 *********************************
+//Crie uma função que dado um intervalo (entre x e y) exiba todos número pares:
 
-/*
+
 function par(x, y) {
     let arrayPar
     arrayPar = []
-    for (let index = x; index <= y; index++) {
-        return arrayPar.push(index)   
+    for (let index = x; index <= y; index+2) {
+        arrayPar.push(index)   
     }
     console.log(arrayPar)
 }
 par(32, 321)
-ainda não consegui fazer funcionar. estudar mais sobre array e suas propriedades.
 
-
-*/
 
 //************************** EXERCÍCIO 3 *********************************
 
@@ -68,3 +66,28 @@ function exp(anos) {
 
 
  //************************** EXERCÍCIO 5 *********************************
+
+/* Foi sugerido ultilizar o for...of e o .join mas não consegui visualizar a 
+usuabilidade do for...of aqui */
+ 
+
+let usuarios = [
+    {
+    nome: "Diego",
+    habilidades: ["Javascript", "ReactJS", "Redux"]
+    },
+    {
+    nome: "Gabriel",
+    habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+    }
+]
+
+console.log(`O ${usuarios[0].nome} possui as habilidades: ${usuarios[0].habilidades.join()}`)
+console.log(`O ${usuarios[1].nome} possui as habilidades: ${usuarios[1].habilidades.join()}`)
+//TESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTE
+
+/* let iterable = [10, 20, 30]
+
+for (let value of iterable) {
+    console.log(value)
+} */
