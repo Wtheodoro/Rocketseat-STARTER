@@ -24,8 +24,10 @@ console.log(`O usuário mora em ${adress.city} / ${adress.uf}, no bairro ${adres
 function par(x, y) {
     let arrayPar
     arrayPar = []
-    for (let index = x; index <= y; index+2) {
-        arrayPar.push(index)   
+    for (let index = x; index <= y; index++) {
+        if (index%2 == 0) {
+            arrayPar.push(index)
+        }   
     }
     console.log(arrayPar)
 }
