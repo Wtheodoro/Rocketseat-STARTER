@@ -1,2 +1,2 @@
 # Rocketseat STARTER
- Eis aqui minhas tentatiivas aos desafios.
+ Eis aqui minhas tentativas aos desafios.
