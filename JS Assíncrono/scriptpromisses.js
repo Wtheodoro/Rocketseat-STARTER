@@ -22,7 +22,8 @@ checaIdade(20)
  console.log("Menor que 18");
  });
 
-/******************************** EX 2 MÓDULO 4 **********************************/
+/******************************** EX 2 e 3 MÓDULO 4 **********************************/
+
 var listElement = document.querySelector('#app ul')
 var inputElement = document.querySelector('#app input')
     
@@ -34,15 +35,41 @@ function renderRepositories(repositories){
     liElement.appendChild(textElement)
     listElement.appendChild(liElement)
 
-    inputElement.value = ""
+    inputElement.value = ' '
     }
+}
+
+function renderError(){
+    listElement.innerHTML = ' '
+    var textElement = document.createTextNode('Erro ao carregar.')
+    var errorElement = document.createElement('li')
+
+    errorElement.appendChild(textElement)
+    listElement.appendChild(errorElement)
+
+    inputElement.value = ' '
+}
+
+function renderLoading(){
+    listElement.innerHTML = ' '
+    var textElement = document.createTextNode('Carregando...')
+    var loadingElement = document.createElement('li')
+    
+    loadingElement.appendChild(textElement)
+    listElement.appendChild(loadingElement)
+
+    inputElement.value = ' '
 }
 
 function listRepositories(){
     var user = inputElement.value
+    
+    renderLoading()
     axios.get('https://api.github.com/users/' + user + '/repos')
-        .then(function(response){
+      .then(function(response){
         renderRepositories(response.data)
-        })
-      
+      })
+      .catch(function(){
+        renderError()
+    })
 }
